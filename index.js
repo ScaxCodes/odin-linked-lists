@@ -61,6 +61,15 @@ class LinkedList {
     });
     return index;
   }
+
+  toString() {
+    let string = "";
+    this.nodes.forEach((node, index) => {
+      string += `( ${node.value} ) -> `;
+      if (index === this.nodes.length - 1) string += "null";
+    });
+    console.log(string);
+  }
 }
 
 class Node {
