@@ -40,6 +40,27 @@ class LinkedList {
   at(index) {
     return this.nodes[index];
   }
+
+  pop() {
+    this.nodes.pop();
+    this.nodes[this.nodes.length - 1].nextNode = null;
+  }
+
+  contains(value) {
+    let result = false;
+    this.nodes.forEach((node) => {
+      if (node.value === value) result = true;
+    });
+    return result;
+  }
+
+  find(value) {
+    let index = null;
+    this.nodes.forEach((node, i) => {
+      if (node.value === value) index = i;
+    });
+    return index;
+  }
 }
 
 class Node {
