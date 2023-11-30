@@ -24,6 +24,22 @@ class LinkedList {
       node.nextNode = index + 1;
     });
   }
+
+  size() {
+    return this.nodes.length;
+  }
+
+  head() {
+    return this.nodes[0];
+  }
+
+  tail() {
+    return this.nodes[this.nodes.length - 1];
+  }
+
+  at(index) {
+    return this.nodes[index];
+  }
 }
 
 class Node {
@@ -32,3 +48,9 @@ class Node {
     this.nextNode = nextNode;
   }
 }
+
+const ok = new LinkedList();
+ok.append("yolo");
+ok.append("yolo2");
+ok.prepend("zolo");
+console.log(ok);
