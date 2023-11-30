@@ -3,6 +3,8 @@ class LinkedList {
     this.nodes = [];
   }
 
+  // This method is a bit complex, because i thought the array may contain deleted nodes
+  // Did not refactor the code yet, after realizing thats not the case. Could be simplified
   append(value) {
     if (this.nodes.length === 0) {
       console.log("Linked list is empty, adding first element");
@@ -79,8 +81,9 @@ class Node {
   }
 }
 
-const ok = new LinkedList();
-ok.append("yolo");
-ok.append("yolo2");
-ok.prepend("zolo");
-console.log(ok);
+const myList = new LinkedList();
+myList.append("eins");
+myList.append("zwei");
+myList.prepend("alpha");
+console.log(myList);
+myList.toString();
