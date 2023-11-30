@@ -16,11 +16,19 @@ class LinkedList {
       this.nodes[tailNodeIndex].nextNode = tailNodeIndex + 1;
     }
   }
+
+  prepend(value) {
+    this.nodes.splice(0, 0, new Node(value, 1));
+    this.nodes.forEach((node, index) => {
+      if (node.nextNode === null || index === 0) return;
+      node.nextNode = index + 1;
+    });
+  }
 }
 
 class Node {
-  constructor(value = null) {
+  constructor(value = null, nextNode = null) {
     this.value = value;
-    this.nextNode = null;
+    this.nextNode = nextNode;
   }
 }
